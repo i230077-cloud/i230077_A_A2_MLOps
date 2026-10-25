@@ -135,8 +135,8 @@ The agent provides a pluggable LLM interface configured via environment variable
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/msaadd25/DevOps-Repository-Auditing-Agent.git
-cd DevOps-Repository-Auditing-Agent
+git clone https://github.com/i230077-cloud/i230077_A_A2_MLOps.git
+cd i230077_A_A2_MLOps
 ```
 
 ### 2. Create and Activate a Virtual Environment
@@ -306,4 +306,5 @@ pytest -v
 - **Assignment**: Assignment 2 — Build an AI Agent for DevOps Repository Auditing
 - **Student Name**: Muhammad Saad
 - **Student ID**: i230077
-- **Submission Mode**: Public GitHub Repository
+- **GitHub**: [i230077-cloud](https://github.com/i230077-cloud)
+- **Repository URL**: [https://github.com/i230077-cloud/i230077_A_A2_MLOps](https://github.com/i230077-cloud/i230077_A_A2_MLOps)

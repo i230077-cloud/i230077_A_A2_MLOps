@@ -9,7 +9,7 @@ description = "Autonomous AI Agent for DevOps Repository Auditing with Evidence-
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-    { name = "Muhammad Saad", email = "muhammad.saadd06@gmail.com" }
+    { name = "i230077-cloud" }
 ]
 keywords = ["devops", "agent", "llm", "audit", "security", "github-actions", "static-analysis"]
 dependencies = [
