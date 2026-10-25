@@ -1,0 +1,85 @@
+{
+  "repository": "https://github.com/example/demo-project",
+  "violations": [
+    {
+      "rule_id": "SEC-001",
+      "category": "security",
+      "severity": "critical",
+      "file": "config.py",
+      "line": 17,
+      "description": "Hardcoded API credential",
+      "evidence": "Credential assigned directly in source code: API_KEY = '[REDACTED_API_KEY]'",
+      "recommendation": "Use a secrets manager or environment variable instead of committing credentials."
+    },
+    {
+      "rule_id": "CI-002",
+      "category": "github actions / ci",
+      "severity": "critical",
+      "file": ".github/workflows/pr_check.yml",
+      "line": 12,
+      "description": "Dangerous workflow trigger with untrusted PR checkout",
+      "evidence": "Workflow triggers on pull_request_target and checks out pull request head ref.",
+      "recommendation": "Change trigger to pull_request or isolate privileged operations to separate workflows."
+    },
+    {
+      "rule_id": "CI-003",
+      "category": "github actions / ci",
+      "severity": "high",
+      "file": ".github/workflows/ci.yml",
+      "line": 8,
+      "description": "Excessive workflow permissions",
+      "evidence": "Top-level 'permissions: write-all' declared in workflow file.",
+      "recommendation": "Apply principle of least privilege by specifying read-only permissions by default."
+    },
+    {
+      "rule_id": "DEP-001",
+      "category": "dependency management",
+      "severity": "high",
+      "file": "pyproject.toml",
+      "line": null,
+      "description": "Missing dependency lockfile",
+      "evidence": "Poetry project configuration present in pyproject.toml but poetry.lock is missing.",
+      "recommendation": "Run 'poetry lock' and commit the resulting poetry.lock file to version control."
+    },
+    {
+      "rule_id": "TEST-002",
+      "category": "testing",
+      "severity": "high",
+      "file": ".github/workflows/ci.yml",
+      "line": 24,
+      "description": "Automated tests not executed in CI workflow",
+      "evidence": "Test suite directory 'tests/' exists, but CI workflow jobs do not execute pytest or test runners.",
+      "recommendation": "Add a step in the CI workflow to execute the test suite on every pull request and push."
+    },
+    {
+      "rule_id": "HYG-003",
+      "category": "repository hygiene",
+      "severity": "high",
+      "file": "src/__pycache__/app.cpython-311.pyc",
+      "line": null,
+      "description": "Tracked bytecode cache file in repository",
+      "evidence": "Compiled Python bytecode file tracked under version control in src/__pycache__.",
+      "recommendation": "Untrack bytecode files using 'git rm --cached' and add __pycache__/ to .gitignore."
+    },
+    {
+      "rule_id": "CONF-001",
+      "category": "configuration",
+      "severity": "medium",
+      "file": "scripts/deploy.py",
+      "line": 42,
+      "description": "Hardcoded machine-specific absolute path",
+      "evidence": "Hardcoded path '/home/developer/app/data' found in deployment script.",
+      "recommendation": "Use relative paths or configure paths using environment variables."
+    },
+    {
+      "rule_id": "QUAL-001",
+      "category": "code quality",
+      "severity": "medium",
+      "file": null,
+      "line": null,
+      "description": "Missing code linter and formatting configuration",
+      "evidence": "Repository contains no configuration for ruff, flake8, black, eslint, or pyproject linter tools.",
+      "recommendation": "Configure a modern linter such as ruff in pyproject.toml and integrate it into pre-commit and CI."
+    }
+  ]
+}
